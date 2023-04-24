@@ -6,9 +6,20 @@ function* counter(){
 
 let generator = counter();
 
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
+function* retornador(){
+    yield* counter();
+    console.log("regresé");
+    yield 3;
+}
+
+let g = retornador();
+
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+
+
